@@ -1,0 +1,24 @@
+-----Fibonassi-----
+(deffunction fibonassi (?a)
+    (if (or (= ?a 0) (= ?a 1)) then
+        ?a
+    else 
+        (+ (fibonassi(- ?a 1)) (fibonassi(- ?a 2)))))
+
+-----Numero Primo-----
+(deffunction primo (?x)
+	(bind ?senal 0)
+	(bind ?aux (- ?x 1))
+	(loop-for-count(?i 2 ?aux)
+		(if (and (= (mod ?x ?i) 0) (neq ?x 2))
+		then
+			(bind ?senal 1)
+		)
+	)
+	(if (= ?senal 1)
+	then 
+		(printout t "El numero no es primo" crlf)
+	else
+		(printout t "El numero es primo" crlf)
+	)
+)

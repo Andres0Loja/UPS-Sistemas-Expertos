@@ -1,0 +1,25 @@
+( defracta  PRINCIPAL :: maximo
+   (vector 1 )
+   (vector 2 )
+   (vector 3 )
+   (vector 4 )
+   (vector 5 )
+   (vector 6 )
+   (vector 7 ))
+
+( defrule  PRINCIPAL :: Pos
+   (vector ? x )
+   =>
+   ( afirmar (vector-aux ? x )))
+
+( desfrule  PRINCIPAL :: ordena
+   ? f  <- (max vector-aux ? b  ? m1  ? m2 &: (< ? m2  ? m1 ) ? e )
+   =>
+   ( retraer  ? f )
+   ( afirmar (vector-aux ? b  ? m2  ? m1  ? e )))
+
+( defrule  PRINCIPAL :: Imprime
+   ( no (vector-aux ? x  ? m1  ? m2 &: (< ? m2  ? m1 ) ? e ))
+   (vector ? y )
+   =>
+   ( impresión t "El orden es." "-" ? y crlf))
