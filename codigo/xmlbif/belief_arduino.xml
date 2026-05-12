@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Material pendiente de revision.
-  Inconsistencias del original:
-  - Se declara "canditados", pero las definiciones usan "candidatos".
-  - Se define "Azar" y se usa como padre de "Node 4", pero no hay variable Azar declarada.
+  Version corregida a partir del PDF original "Belief Arduino".
+  Correcciones aplicadas:
+  - "canditados" se normalizo como "candidatos".
+  - Se agrego la variable binaria "Azar", porque el original incluia su tabla
+    de probabilidad y la usaba como padre de "Node 4", pero no la declaraba.
 -->
 <BIF VERSION="0.3"
   xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
@@ -23,11 +24,18 @@
     </VARIABLE>
 
     <VARIABLE TYPE="nature">
-      <NAME>canditados</NAME>
+      <NAME>candidatos</NAME>
       <OUTCOME>Carlos</OUTCOME>
       <OUTCOME>Juan</OUTCOME>
       <OUTCOME>Luis</OUTCOME>
       <PROPERTY>position = (7107.0, 5226.0)</PROPERTY>
+    </VARIABLE>
+
+    <VARIABLE TYPE="nature">
+      <NAME>Azar</NAME>
+      <OUTCOME>T</OUTCOME>
+      <OUTCOME>F</OUTCOME>
+      <PROPERTY>position = (7358.0, 5054.0)</PROPERTY>
     </VARIABLE>
 
     <VARIABLE TYPE="nature">
